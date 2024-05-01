@@ -4,20 +4,15 @@
     Author     : tekke
 --%>
 
-<jsp:include page="./includes/header_1.jsp" />
+<jsp:include page="./includes/header.jsp" />
 <style>
     div{
-        width: 100%;
-        height: 50vh;
+        height: 400px;
         display: flex;
-        flex-direction: column;
+        
         justify-content: center;
         align-items: center;
-        gap:30px;
     }
 </style>
-<div>
-    <h1>Examen 3er parcial Bernal </h1>
-    <h2>ADMON DE LA SEGURIDAD INFORMÁTICA</h2>
-</div>
+<div><h1>Angel INICIO DE EXAMEN</h1></div>
 <jsp:include page="./includes/footer.jsp" />

@@ -7,35 +7,28 @@
 
 <jsp:include page="../includes/header.jsp" />
 <style>
-    .LogReg1{
-        width: 100%;
-
-    }
-    .log1{
-        width: 100%;
-        height: 50vh;
+    div{
+        height: 400px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        flex-direction: column;
     }
 </style>
 
-<div class="LogReg1">
-    <section class="log1">
-        <h2>Login</h2>
-        <form action="LoginUser.jsp" method="get">
-            <label for="user">USERNAME:</label>
-            <input type="text" id="user" name="username" required>
+<div>
 
-            <label for="pass">PASSWORD:</label>
-            <input type="password" id="pass" name="password" required>
+        <h2>IICIAR SESION</h2>
+        <form action="validar.jsp" method="get">
+            <label for="user">USUARIO</label>
+            <input type="text" id="user" name="usuario" required>
+
+            <label for="pass">Contraseña</label>
+            <input type="password" id="pass" name="contrasena" required>
 
             <input type="submit" value="Ingresar">
         </form>
 
-    </section>
 
 
 </div>

@@ -4,8 +4,8 @@
 <%
     // Recuperar los valores enviados desde el formulario
     String nombre = request.getParameter("nombre");
-    String pass = request.getParameter("pass");
-    int typeuser = 5;
+    String contrasena = request.getParameter("contrasena");
+    int typeuser = 0;
 
     Connection conexion = null;
     PreparedStatement pstmt = null;
@@ -14,17 +14,17 @@
         // Cargar el driver de MySQL
         Class.forName("com.mysql.jdbc.Driver");
         // Establecer la conexión con la base de datos
-        conexion = DriverManager.getConnection("jdbc:mysql://localhost/bdexaasi_bernal", "root", "");
+        conexion = DriverManager.getConnection("jdbc:mysql://localhost/bdexaasi_lecona", "root", "");
 
         // Encriptar la contraseña usando SHA
         MessageDigest md = MessageDigest.getInstance("SHA");
-        md.update(pass.getBytes());
+        md.update(contrasena.getBytes());
         byte[] bytes = md.digest();
         BigInteger bi = new BigInteger(1, bytes);
         String hashedPass = bi.toString(16);
 
         // Preparar la consulta SQL para insertar los datos
-        String query = "INSERT INTO usuariosasi_bernal (nombre, password, typeuser) VALUES (?, ?, ?)";
+        String query = "INSERT INTO usuariosasi_lecona (nombre_usuario, contrasena, tipo_usuario) VALUES (?, ?, ?)";
         pstmt = conexion.prepareStatement(query);
         pstmt.setString(1, nombre);
         pstmt.setString(2, hashedPass); // Insertar la contraseña encriptada
@@ -33,16 +33,12 @@
         // Ejecutar la consulta
         int rowsAffected = pstmt.executeUpdate();
         if (rowsAffected > 0) {
-            out.println("Usuario agregado exitosamente.");
-            response.sendRedirect("home.jsp");
+            
+            response.sendRedirect("inicio.jsp");
         } else {
-            out.println("No se pudo agregar el usuario.");
+            out.println("No se pudo agregar");
         }
     } catch (Exception e) {
-        out.println("Error al agregar el usuario: " + e.getMessage());
-    } finally {
-        // Cerrar los recursos
-        if (pstmt != null) try { pstmt.close(); } catch (SQLException ignore) {}
-        if (conexion != null) try { conexion.close(); } catch (SQLException ignore) {}
+        out.println("Error al agregar: " + e.getMessage());
     }
 %>

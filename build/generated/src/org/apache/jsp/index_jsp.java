@@ -43,23 +43,18 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write('\n');
       out.write('\n');
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "./includes/header_1.jsp", out, false);
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "./includes/header.jsp", out, false);
       out.write("\n");
       out.write("<style>\n");
       out.write("    div{\n");
-      out.write("        width: 100%;\n");
-      out.write("        height: 50vh;\n");
+      out.write("        height: 400px;\n");
       out.write("        display: flex;\n");
-      out.write("        flex-direction: column;\n");
+      out.write("        \n");
       out.write("        justify-content: center;\n");
       out.write("        align-items: center;\n");
-      out.write("        gap:30px;\n");
       out.write("    }\n");
       out.write("</style>\n");
-      out.write("<div>\n");
-      out.write("    <h1>Examen 3er parcial Bernal </h1>\n");
-      out.write("    <h2>ADMON DE LA SEGURIDAD INFORMÁTICA</h2>\n");
-      out.write("</div>\n");
+      out.write("<div><h1>Angel INICIO DE EXAMEN</h1></div>\n");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "./includes/footer.jsp", out, false);
       out.write('\n');
     } catch (Throwable t) {
